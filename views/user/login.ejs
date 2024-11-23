@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+  <link rel="stylesheet" href="/styles/login.css">
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+
+      <form class="login-form" action="/user/login" method="post">
+        <input type="text" name="username" id="username" placeholder="username" />
+        <input type="password" name="password" id="password" placeholder="password" />
+        <button>Login</button>
+        <p class="message">Not registered? <a href="/user/register">Create an account</a></p>
+      </form>
+
+    </div>
+  </div>
+  <script src="/styles/login.js"></script>
+  <script src="/styles/userLoginValidation.js"></script>
+
+  <% if (typeof errorMessage !='undefined' ) { %>
+    <script>
+
+      swal("Error", "<%= errorMessage %>", "error");
+    </script>
+    <% } %>
+
+      <% if (typeof successMessage !='undefined' ) { %>
+        <script>
+          swal("Good job!", "<%= successMessage %>", "success");
+
+        </script>
+        <% } %>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Register</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+  <link rel="stylesheet" href="/styles/login.css">
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+
+
+      <form class="login-form" action="/user/register" method="post" id="user-register-form">
+        <input type="text" name="username" id="username" placeholder="username" />
+        <input type="text" name="password" id="password" placeholder="password" />
+        <input type="text" name="confirmPassword" id="confirmPassword" placeholder="confirm-password">
+        <button>Create</button>
+        <p class="message">Already registered? <a href="/user/login">Log In</a></p>
+      </form>
+
+    </div>
+  </div>
+  <script src="/styles/login.js"></script>
+  <script src="/styles/userregister.js"></script>
+
+
+  <% if (typeof errorMessage !='undefined' ) { %>
+    <script>
+      swal("Error", "<%= errorMessage %>", "error");
+    </script>
+    <% } %>
+
+      <% if (typeof successMessage !='undefined' ) { %>
+        <script>
+          swal("Good job!", "<%= successMessage %>", "success");
+
+        </script>
+        <% } %>
+
+</body>
+
+</html>
