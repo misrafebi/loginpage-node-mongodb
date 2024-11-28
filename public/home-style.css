@@ -1,0 +1,26 @@
+
+.body {
+    background-color: rgb(243, 243, 240);
+    height: 100vh;
+}
+
+.name-head {
+    text-align: center;
+    padding-top: 10%;
+    color: rgb(76, 74, 74);
+}
+
+.btn-body {
+    width: 210px;
+    height: 57px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.flex-container {
+    display: flex;
+    gap: 130px;
+    justify-content: center;
+    padding-top: 70px;
+}
